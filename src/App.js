@@ -62,7 +62,11 @@ class App extends Component {
     const { cards } = this.state;
     return (
       <div style={appStyles}>
-         {!getCookie('test') && this.state.showOverlayBox ? <ShowOverlay /> : null}
+         {!getCookie('test') && this.state.showOverlayBox ? <div onClick = {()=>{
+                this.setState({
+                  showOverlayBox: false
+                })
+         }}><ShowOverlay /></div> : null}
         <div style={wrapperStyles}>
           {cards.length > 0 && (
             <div style={wrapperStyles}>
